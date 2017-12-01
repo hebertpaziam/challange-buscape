@@ -1,10 +1,10 @@
 {
   "name": "buscapeapp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "license": "MIT",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "dev": "npm run gulp-dev",
     "build": "npm run gulp-build",
     "lite": "lite-server --config=bs-config.json",
@@ -19,18 +19,19 @@
     "express": "~4.15.5",
     "hbs": "~4.0.1",
     "morgan": "~1.9.0",
+    "mongoose": "^4.4.x",
     "serve-favicon": "~2.4.5",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.6.0"
   },
   "devDependencies": {
-    "child_process": "^1.0.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-if": "^2.0.2",
     "gulp-minifier": "^0.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "gulp-strip-css-comments": "^1.2.0"
+    "gulp-strip-css-comments": "^1.2.0",
+    "nodemon": "^1.11.0"
   }
 }
