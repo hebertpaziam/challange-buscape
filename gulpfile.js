@@ -26,7 +26,7 @@ gulp.task('styles', function () {
                 return m && m.join('\n') + '\n' || '';
             }
         })))
-        .pipe(gulp.dest('./public/styles'))
+        .pipe(gulp.dest('./public/assets/styles'))
 });
 
 
@@ -38,7 +38,7 @@ gulp.task("makeBuildCompilation", function () { isProduction = true; })
 gulp.task("build", ["makeBuildCompilation", 'styles'])
 
 gulp.task('watch', function () {
-    gulp.watch(paths.srcFiles.styles, ['styles']);
+    gulp.watch('./source/styles/*.scss', ['styles']);
 });
 gulp.task("dev", ['styles', 'watch']);
 gulp.task('default', ['styles']);

@@ -11,3 +11,6 @@ Em geral, é onde colocamos resets, box-sizing, etc.
 * {
     box-sizing: border-box;
 }
+*:not(.fa){
+    font-family: "Montserrat", Arial, Helvetica, sans-serif; 
+}
