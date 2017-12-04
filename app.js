@@ -29,6 +29,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public/')));
 app.use('/node_modules/', express.static(path.join(__dirname, './node_modules/')));
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Authorization, Accept');
+  if ('OPTIONS' == req.method) {
+      res.send(200);
+  } else {
+      next();
+  }
+});
+
 app.use('/', index);
 
 // catch 404 and forward to error handler

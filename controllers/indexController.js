@@ -1,7 +1,19 @@
 const Product = require('../models/productModel');
 const db = require('../database/mongoose');
 
-exports.renderIndex = (req, res) => {
+exports.init = (req, res) => {
+
+    renderIndex(req, res);
+}
+
+exports.addToFav = (req, res) => {
+    Product.findOneAndUpdate({productId: req.body.productId},  {favorite:true})
+    .then((prod) => {
+        renderIndex(req, res);
+    })
+}
+
+renderIndex = (req, res) => {
     var list;
     var cart;
     var subtotal = {
@@ -16,7 +28,7 @@ exports.renderIndex = (req, res) => {
             cart: true
         }).then((products) => {
 
-            products.forEach((prod)=>{
+            products.forEach((prod) => {
                 subtotal.installmentValue += prod.price.installmentValue
                 subtotal.value += prod.price.value
             })
@@ -26,7 +38,7 @@ exports.renderIndex = (req, res) => {
             res.render('index', {
                 list: list,
                 cart: cart,
-                subtotal:subtotal
+                subtotal: subtotal
             });
         })
     });

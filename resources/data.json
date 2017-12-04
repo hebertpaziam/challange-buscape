@@ -2,7 +2,7 @@
     "items": [
         {
             "product": {
-                "id": 2321312,
+                "productId": 2321312,
                 "name": "Smartphone Apple iPhone 7 128GB",
                 "images": [
                     "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg",
@@ -14,12 +14,15 @@
                     "value": 3509.10,
                     "installments": 10,
                     "installmentValue": 389.90
-                }
+                },
+                "cart":true,
+                "favorite":false,
+                "bestPrice":true
             }
         },
         {
             "product": {
-                "id": 9971,
+                "productId": 9971,
                 "name": "Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana",
                 "images": [
                     "http://mthumbs.buscape.com.br/tv/smart-tv-samsung-serie-4-un32j4300ag-32-polegadas-led-plana_600x600-PU95547_1.jpg",
@@ -31,12 +34,15 @@
                     "value": 1139.90,
                     "installments": 10,
                     "installmentValue": 134.11
-                }
+                },
+                "cart":false,
+                "favorite":false,
+                "bestPrice":false
             }
         },
         {
             "product": {
-                "id": 6717131,
+                "productId": 6717131,
                 "name": "Câmera Digital Canon EOS Rebel T5i 18.0 Megapixels",
                 "images": [
                     "http://mthumbs.buscape.com.br/camera-digital/canon-eos-rebel-t5i-18-0-megapixels_600x600-PU7bf7b_1.jpg"
@@ -45,12 +51,15 @@
                     "value": 1999.20,
                     "installments": 10,
                     "installmentValue": 235.20
-                }
+                },
+                "cart":false,
+                "favorite":true,
+                "bestPrice":false
             }
         },
         {
             "product": {
-                "id": 6717131,
+                "productId": 6717132,
                 "name": "Lenovo IdeaPad 310 80UH0004BR Intel Core i7-6500U 2.5 GHz 8192 MB 1024 GB",
                 "images": [
                     "http://mthumbs.buscape.com.br/notebook/lenovo-ideapad-310-80uh0004br-intel-core-i7-6500u-2-5-ghz-8192-mb-1024-gb_600x600-PU98e6e_1.jpg"
@@ -59,7 +68,10 @@
                     "value": 2599.00,
                     "installments": 10,
                     "installmentValue": 259.90
-                }
+                },
+                "cart":false,
+                "favorite":false,
+                "bestPrice":false
             }
         }
     ]

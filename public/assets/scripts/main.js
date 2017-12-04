@@ -60,13 +60,19 @@ function changeViewsInit(changeViewButtons) {
 //ADICIONAR PRODUTO AOS FAVORITOS
 function addToFavoritesInit(addFavoriteBtn) {
     addFavoriteBtn.addEventListener("click", function (evt) {
-        var spanHeart = evt.target;
+        // var spanHeart = evt.target;
 
-        if (spanHeart.className.indexOf("fa fa-heart-o") != -1) {
-            spanHeart.className = "fa fa-heart";
-        } else {
-            spanHeart.className = "fa fa-heart-o";
-        }
+        // if (spanHeart.className.indexOf("fa fa-heart-o") != -1) {
+        //     spanHeart.className = "fa fa-heart";
+        // } else {
+        //     spanHeart.className = "fa fa-heart-o";
+        // }
+
+        var xhr = new XMLHttpRequest()
+        xhr.open("PUT", "http://localhost:3000/api/addToFav/");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.responseType = "document";
+        xhr.send(JSON.stringify({ productId: 6717132}));
     })
 }
 
