@@ -27,5 +27,9 @@ $ npm start
 
 
 ### Utils
-* [Gulp](https://gulpjs.com/) - Automatizador de tarefas
+* [GIT](https://git-scm.com/) - Controle de versões.
+* [Gulp](https://gulpjs.com/) - Automatizador de tarefas.
 * [Sass](http://sass-lang.com/) - Pré-processador CSS.
+
+### IDE
+* [VSCode](https://code.visualstudio.com/) - Visual Studio Code
