@@ -11,66 +11,93 @@ cards específicos como aqueles incluindo imagens, etc.
  */
 
 .navbar {
-    padding-bottom: 76px;
-    >.fixed-content {
-        z-index:1046;
-        position: fixed;
-        top: 0;
-        left: 0;
+    width: 100%;
+    background-color: $primaryColor;
+    box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, .45);
+    >.brand {
+        display: inline-block;
+        vertical-align: middle;
+        width: 87px;
+        height: 56px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../images/teste.svg");
+        margin: 10px;
+    }
+    >.menu {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 135px);
+        margin: 10px;
+    }
+    >.cart {
         width: 100%;
-        background-color: $primaryColor;
-        padding: 10px;
-        box-shadow: 1px 4px 8px -2px rgba(0,0,0,.45);
-        >.brand {
-            display: inline-block;
-            vertical-align: middle;
-            width: 87px;
-            height: 56px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url("../images/buscape-logo.svg");
-        }
-        >.menu {
-            display: inline-block;
-            vertical-align: middle;
-            width: calc(100% - 95px);
-        }
-        >.content{
-            position: absolute;
-            top:76px;
-            left:0px;
-            width: 100%;
-            height: 100px;
-            transition: all .3s linear;
-            background-color:darken($primaryColor, 20%);
-            &.-closed{
-                height: 0px;
-            }
+        transition: all 150ms linear;
+        overflow: hidden;
+        &.-closed {
+            max-height: 0px;
         }
     }
 }
 
-.menu {
-    >.icon {
-        font-size: 35px;
-        float: right;
+.cart-products {
+    background-color: #daaf00;
+    >.product {
+        background-color: #c49d00;
+        padding: 30px 20px;
         position: relative;
-        background-color: transparent;
-        padding: 0px 10px 0px 0px;
-        >.badge {
-            color: #FFFFFF;
-            background-color: #FF0000;
-            border-radius: 50%;
-            font-size: 12px;
-            line-height: 20px;
-            height: 20px;
-            width: 20px;
-            text-align: center;
+        margin: 5px 0px;
+        >.image {
+            display: inline-block;
+            vertical-align: top;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 0px 30px 0px 0px;
+        }
+        >.remove-btn {
             position: absolute;
-            top: calc(50% + 2px);
-            left: 0px;
-            transform: translate(-50%, 0px);
+            top: 15px;
+            right: 30px;
+            background-color: transparent;
+            font-size: 28px;
+        }
+        >.info {
+            max-width: 375px;
+            line-height: 24px;
+            display: inline-block;
+            vertical-align: top;
+            >.name {
+                color: #FFFFFF;
+                font-size: 18px;
+                font-weight: normal;
+                margin-bottom:10px;
+            }
+            >.price {
+                font-size: 18px;
+                color: #000000;
+                font-weight: bold;
+                >.block {
+                    display: block;
+                }
+            }
+        }
+    }
+    .subtotal {
+        text-align: right;
+        color: #000000;
+        padding: 25px 10px 10px 10px;
+        font-weight: bold;
+        line-height: 24px;
+        >.divider {
+            border-bottom: 1px solid #000000;
+            margin: 10px 0px;
+        }
+        >.price {
+            >.block {
+                display: block;
+            }
         }
     }
 }
@@ -78,19 +105,19 @@ cards específicos como aqueles incluindo imagens, etc.
 .product-list {
     background-color: #f3f3f3;
     min-height: 480px;
-    padding: 20px 5px;
+    padding: 30px 5px;
     >.product {
-        padding: 10px;
+        padding: 20px 10px;
         margin: 10px;
-        height: 220px;
+        min-height: 220px;
         background-color: #FFFFFF;
     }
 }
 
 .change-view {
-    width: 30px;
+    width: 40px;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: top;
     display: inline-block;
     >.action {
         width: 30px;
@@ -99,7 +126,9 @@ cards específicos como aqueles incluindo imagens, etc.
         padding: 2px;
         background-color: transparent;
         vertical-align: middle;
-        border: 1px yellow solid;
+        &.-active {
+            border: 1px $primaryColor solid;
+        }
         >.another-image {
             width: 100%;
             height: 100%;
@@ -116,7 +145,7 @@ cards específicos como aqueles incluindo imagens, etc.
                 background-color: #FFFFFF;
                 background-position: center;
                 background-repeat: no-repeat;
-                background-image: url("../images/buscape-logo.svg");
+                background-image: url("../images/teste.svg");
             }
         }
     }
@@ -127,8 +156,11 @@ cards específicos como aqueles incluindo imagens, etc.
     height: 198px;
     overflow: hidden;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     margin: auto 30px;
+    @media (max-width: 375px) {
+        margin: auto auto 30px auto;
+    }
     >.main-image {
         width: 200px;
         height: 198px;
@@ -146,30 +178,74 @@ cards específicos como aqueles incluindo imagens, etc.
             background-color: #FFFFFF;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: url("../images/buscape-logo.svg");
+            background-image: url("../images/teste.svg");
         }
     }
 }
 
 .info {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
+    max-width: 400px;
+    font-weight: bold;
     >.name {
+        font-size: 25px;
+        color: #444444;
         >.add-favorites {
             color: $primaryColor;
             background-color: transparent;
             padding: 0px;
+            margin-left: 10px;
+            font-size: 25px;
         }
-        &:after {}
     }
-    >.better-price-flag {}
+    >.divider {
+        display: block;
+        margin: 20px 0px;
+        border-bottom: 1px solid #e6e6e6;
+    }
     >.price {
-        >.installments {}
-        >.currency-symbol {}
-        >.installment-value {}
+        color: #22b14c;
+        display: inline-block;
+        vertical-align: top;
+        >.installments {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+        >.currency-symbol {
+            font-size: 26px;
+            margin-right: 5px;
+        }
+        >.installment-value {
+            font-size: 36px;
+            margin-right: 5px;
+        }
         >.value {
-            strong {}
+            margin-top: 10px;
+            color: #757575;
+            @media (max-width: 375px) {
+                margin-bottom: 20px;
+            }
+            strong {
+                color: #22b14c;
+            }
         }
     }
-    >.add-button {}
+    >.add-cart {
+        display: inline-block;
+        vertical-align: top;
+        background-color: #22b14c;
+        color: #FFFFFF;
+        padding: 10px;
+        border-radius: 2px;
+        font-size: 15px;
+        &.-disabled{
+            opacity: 0.5;
+            cursor:not-allowed;
+        }
+        & .fa {
+            font-size: 14px;
+            margin: 0px 0px 0px 5px;
+        }
+    }
 }

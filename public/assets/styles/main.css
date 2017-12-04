@@ -239,56 +239,23 @@ button {
   button:focus {
     outline: none; }
 
+figure > img {
+  width: 100%;
+  height: 100%; }
+
 a, a:active, a:visited, a:hover {
   color: inherit;
   cursor: pointer;
   text-decoration: none; }
 
 
-
-.navbar {
-  padding-bottom: 76px; }
-  .navbar > .fixed-content {
-    z-index: 1046;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffcd00;
-    padding: 10px;
-    -webkit-box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.45);
-            box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.45); }
-    .navbar > .fixed-content > .brand {
-      display: inline-block;
-      vertical-align: middle;
-      width: 87px;
-      height: 56px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url("../images/buscape-logo.svg"); }
-    .navbar > .fixed-content > .menu {
-      display: inline-block;
-      vertical-align: middle;
-      width: calc(100% - 95px); }
-    .navbar > .fixed-content > .content {
-      position: absolute;
-      top: 76px;
-      left: 0px;
-      width: 100%;
-      height: 100px;
-      -webkit-transition: all .3s linear;
-      transition: all .3s linear;
-      background-color: #997b00; }
-      .navbar > .fixed-content > .content.-closed {
-        height: 0px; }
-
 .menu > .icon {
   font-size: 35px;
   float: right;
   position: relative;
   background-color: transparent;
-  padding: 0px 10px 0px 0px; }
+  padding: 0px 10px 0px 0px;
+  font-weight: bold; }
   .menu > .icon > .badge {
     color: #FFFFFF;
     background-color: #FF0000;
@@ -302,22 +269,125 @@ a, a:active, a:visited, a:hover {
     top: calc(50% + 2px);
     left: 0px;
     -webkit-transform: translate(-50%, 0px);
-            transform: translate(-50%, 0px); }
+            transform: translate(-50%, 0px);
+    text-align: center; }
+
+.better-price-flag {
+  display: block;
+  position: relative;
+  color: #FFFFFF;
+  background-color: #1990df;
+  border-radius: 4px;
+  font-size: 10px;
+  width: 110px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0px 10px;
+  margin: 0px 10px 20px 0px;
+  text-transform: uppercase; }
+  .better-price-flag:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: -7px;
+    width: 17px;
+    height: 17px;
+    background-color: #1990df;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+
+.navbar {
+  width: 100%;
+  background-color: #ffcd00;
+  -webkit-box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.45);
+          box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.45); }
+  .navbar > .brand {
+    display: inline-block;
+    vertical-align: middle;
+    width: 87px;
+    height: 56px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/teste.svg");
+    margin: 10px; }
+  .navbar > .menu {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 135px);
+    margin: 10px; }
+  .navbar > .cart {
+    width: 100%;
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+    overflow: hidden; }
+    .navbar > .cart.-closed {
+      max-height: 0px; }
+
+.cart-products {
+  background-color: #daaf00; }
+  .cart-products > .product {
+    background-color: #c49d00;
+    padding: 30px 20px;
+    position: relative;
+    margin: 5px 0px; }
+    .cart-products > .product > .image {
+      display: inline-block;
+      vertical-align: top;
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 0px 30px 0px 0px; }
+    .cart-products > .product > .remove-btn {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      background-color: transparent;
+      font-size: 28px; }
+    .cart-products > .product > .info {
+      max-width: 375px;
+      line-height: 24px;
+      display: inline-block;
+      vertical-align: top; }
+      .cart-products > .product > .info > .name {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: normal;
+        margin-bottom: 10px; }
+      .cart-products > .product > .info > .price {
+        font-size: 18px;
+        color: #000000;
+        font-weight: bold; }
+        .cart-products > .product > .info > .price > .block {
+          display: block; }
+  .cart-products .subtotal {
+    text-align: right;
+    color: #000000;
+    padding: 25px 10px 10px 10px;
+    font-weight: bold;
+    line-height: 24px; }
+    .cart-products .subtotal > .divider {
+      border-bottom: 1px solid #000000;
+      margin: 10px 0px; }
+    .cart-products .subtotal > .price > .block {
+      display: block; }
 
 .product-list {
   background-color: #f3f3f3;
   min-height: 480px;
-  padding: 20px 5px; }
+  padding: 30px 5px; }
   .product-list > .product {
-    padding: 10px;
+    padding: 20px 10px;
     margin: 10px;
-    height: 220px;
+    min-height: 220px;
     background-color: #FFFFFF; }
 
 .change-view {
-  width: 30px;
+  width: 40px;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
   display: inline-block; }
   .change-view > .action {
     width: 30px;
@@ -325,8 +395,9 @@ a, a:active, a:visited, a:hover {
     margin: 5px;
     padding: 2px;
     background-color: transparent;
-    vertical-align: middle;
-    border: 1px yellow solid; }
+    vertical-align: middle; }
+    .change-view > .action.-active {
+      border: 1px #ffcd00 solid; }
     .change-view > .action > .another-image {
       width: 100%;
       height: 100%;
@@ -343,15 +414,18 @@ a, a:active, a:visited, a:hover {
         background-color: #FFFFFF;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("../images/buscape-logo.svg"); }
+        background-image: url("../images/teste.svg"); }
 
 .main-view {
   width: 200px;
   height: 198px;
   overflow: hidden;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   margin: auto 30px; }
+  @media (max-width: 375px) {
+    .main-view {
+      margin: auto auto 30px auto; } }
   .main-view > .main-image {
     width: 200px;
     height: 198px;
@@ -369,15 +443,61 @@ a, a:active, a:visited, a:hover {
       background-color: #FFFFFF;
       background-position: center;
       background-repeat: no-repeat;
-      background-image: url("../images/buscape-logo.svg"); }
+      background-image: url("../images/teste.svg"); }
 
 .info {
   display: inline-block;
-  vertical-align: middle; }
-  .info > .name > .add-favorites {
-    color: #ffcd00;
-    background-color: transparent;
-    padding: 0px; }
+  vertical-align: top;
+  max-width: 400px;
+  font-weight: bold; }
+  .info > .name {
+    font-size: 25px;
+    color: #444444; }
+    .info > .name > .add-favorites {
+      color: #ffcd00;
+      background-color: transparent;
+      padding: 0px;
+      margin-left: 10px;
+      font-size: 25px; }
+  .info > .divider {
+    display: block;
+    margin: 20px 0px;
+    border-bottom: 1px solid #e6e6e6; }
+  .info > .price {
+    color: #22b14c;
+    display: inline-block;
+    vertical-align: top; }
+    .info > .price > .installments {
+      font-size: 24px;
+      margin-right: 5px; }
+    .info > .price > .currency-symbol {
+      font-size: 26px;
+      margin-right: 5px; }
+    .info > .price > .installment-value {
+      font-size: 36px;
+      margin-right: 5px; }
+    .info > .price > .value {
+      margin-top: 10px;
+      color: #757575; }
+      @media (max-width: 375px) {
+        .info > .price > .value {
+          margin-bottom: 20px; } }
+      .info > .price > .value strong {
+        color: #22b14c; }
+  .info > .add-cart {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #22b14c;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 15px; }
+    .info > .add-cart.-disabled {
+      opacity: 0.5;
+      cursor: not-allowed; }
+    .info > .add-cart .fa {
+      font-size: 14px;
+      margin: 0px 0px 0px 5px; }
 
 
 .-hidden {

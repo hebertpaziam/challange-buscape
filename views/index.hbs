@@ -1,23 +1,45 @@
 <header>
     <nav class="navbar">
-        <div class="fixed-content">
-            <div class="brand"></div>
-            <div class="menu">
-                <button class="icon" id="menu-btn">
-                    <span class="fa fa-bars"></span>
-                    <div class="badge">2</div>
-                </button>
+        <div class="brand"></div>
+        <div class="menu" id="menu">
+            <button class="icon" >
+                <span class="fa fa-bars"></span>
+                <div class="badge">2</div>
+            </button>
+        </div>
+        <div class="cart -closed">
+            <div class="cart-products">
+                <div class="product" data-id="1233456448">
+                    <figure class="image"><img src="http://mthumbs.buscape.com.br/tv/smart-tv-samsung-serie-4-un32j4300ag-32-polegadas-led-plana_600x600-PU95547_1.jpg" alt=""></figure>
+                    <button class="remove-btn"><span class="fa fa-remove"></span></button>
+                    <div class="info">
+                        <div class="name">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana</div>
+                        <div class="price">
+                            <div class="block">10x R$ 134,11</div>
+                            <div class="block">R$ 1.139,90 à vista</div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="subtotal">
+                    <div class="title">subtotal</div>
+                    <div class="divider"></div>
+                    <div class="price">
+                        <div class="block">10x R$ 433,89</div>
+                        <div class="block">ou R$ 4.338,90 à vista</div>
+                    </div>
+                </div>
+
             </div>
-            <div class="content -closed"></div>
         </div>
     </nav>
 </header>
 
 <main>
     <section class="product-list">
+        <h1>{{res}}</h1>
         <div class="product">
             <div class="change-view">
-                <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt=""></button>
+                <button class="action -active"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt=""></button>
                 <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_2_c.jpg?v=2347575274" alt=""></button>
                 <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_3_c.jpg?v=318433138" alt=""></button>
                 <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_4_c.jpg?v=33273730" alt=""></button>
@@ -25,12 +47,13 @@
             <figure class="main-view"> <img class="main-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt=""/></figure>
             <div class="info">
                 <div class="name">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana<button class="add-favorites"><span class="fa fa-heart-o"></span></button></div>
+                <div class="divider"></div>
                 <div class="better-price-flag">MELHOR PREÇO</div>
                 <div class="price">
-                    <span class="installments">10X</span><span class="currency-symbol">R$</span><span class="installment-value">134.11</span>
-                    <div class="value">ou <strong>R$ 1139.90</strong> à vista.</div>
+                    <span class="installments">10x</span><span class="currency-symbol">R$</span><span class="installment-value">134,11</span>
+                    <div class="value">ou <strong>R$ 1139,90</strong> à vista.</div>
                 </div>
-                <button class="add-cart">Adcionar ao carrinho <span class="fa fa-chevron-right"></span></button>
+                <button class="add-cart">Adicionar ao carrinho <span class="fa fa-chevron-right"></span></button>
             </div>
         </div>
     </section>
