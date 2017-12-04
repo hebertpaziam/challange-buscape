@@ -64,16 +64,9 @@ function addToFavoritesInit(addFavoriteBtn) {
 
        
         var isFavorite = (evt.target.className.indexOf("fa fa-heart-o") != -1);
-
-        var product =  evt.path[4];
         
 
         var xhr = new XMLHttpRequest()
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4 && xhr.status === 200){
-                location.reload();
-            }
-        }
         xhr.open("PUT", "http://localhost:3000/api/addToFav/");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify({

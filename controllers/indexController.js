@@ -6,8 +6,7 @@ exports.init = (req, res) => {
 }
 
 exports.toggleFavorite = (req, res) => {
-    Product.findOneAndUpdate({productId: req.body.productId},  {favorite: req.body.favorite})
-    .then((prod) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { favorite: req.body.favorite }).then((prod) => {
         renderIndex(req, res);
     })
 }
@@ -38,7 +37,7 @@ renderIndex = (req, res) => {
                 list: list,
                 cart: cart,
                 subtotal: subtotal
-            });
+            })
         })
     });
 }
