@@ -311,7 +311,7 @@ a, a:active, a:visited, a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../images/teste.svg");
+    background-image: url("../images/buscape-logo.svg");
     margin: 10px; }
   .navbar > .menu {
     display: inline-block;
@@ -414,7 +414,7 @@ a, a:active, a:visited, a:hover {
         background-color: #FFFFFF;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("../images/teste.svg"); }
+        background-image: url("../images/buscape-logo.svg"); }
 
 .main-view {
   width: 200px;
@@ -443,7 +443,7 @@ a, a:active, a:visited, a:hover {
       background-color: #FFFFFF;
       background-position: center;
       background-repeat: no-repeat;
-      background-image: url("../images/teste.svg"); }
+      background-image: url("../images/buscape-logo.svg"); }
 
 .info {
   display: inline-block;
