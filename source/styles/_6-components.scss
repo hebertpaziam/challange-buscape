@@ -52,7 +52,7 @@ cards específicos como aqueles incluindo imagens, etc.
         >.image {
             display: inline-block;
             vertical-align: top;
-            border: 1px solid black;
+            border: 1px solid #000000;
             width: 100px;
             height: 100px;
             margin: 0px 30px 0px 0px;
@@ -206,7 +206,7 @@ cards específicos como aqueles incluindo imagens, etc.
         border-bottom: 1px solid #e6e6e6;
     }
     >.price {
-        color: #22b14c;
+        color: $secondaryColor;
         display: inline-block;
         vertical-align: top;
         >.installments {
@@ -228,14 +228,14 @@ cards específicos como aqueles incluindo imagens, etc.
                 margin-bottom: 20px;
             }
             strong {
-                color: #22b14c;
+                color: $secondaryColor;
             }
         }
     }
     >.add-cart {
         display: inline-block;
         vertical-align: top;
-        background-color: #22b14c;
+        background-color: $secondaryColor;
         color: #FFFFFF;
         padding: 10px;
         border-radius: 2px;
