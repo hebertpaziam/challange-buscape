@@ -48,7 +48,14 @@
             </div>
             <figure class="main-view"> <img class="main-image" src="{{images}}" alt=""/></figure>
             <div class="info">
-                <div class="name">{{name}}<button class="add-favorites"><span class="fa fa-heart-o"></span></button></div>
+                <div class="name">{{name}}
+                    <button class="add-favorites">
+                    {{#if favorite}}
+                        <span class="fa fa-heart"></span> 
+                        {{else}} <span class="fa fa-heart-o"></span>
+                    {{/if}}
+                    </button>
+                </div>
                 <div class="divider"></div>
                 {{#if bestPrice}} <div class="better-price-flag">MELHOR PREÇO</div>{{/if}}
                 <div class="price">
