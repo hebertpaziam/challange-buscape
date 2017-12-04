@@ -74,6 +74,9 @@ function addToFavorites(addFavoriteBtn) {
         var id = JSON.parse(evt.target.parentElement.getAttribute("data-id"));
 
         var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = () => {
+            (xhr.readyState === 4 && xhr.status === 200) ? location.reload() : null;
+        }
         xhr.open("PUT", "http://localhost:3000/api/addToFav/");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify({
@@ -88,6 +91,9 @@ function addToCart(addToCartBtn) {
     addToCartBtn.addEventListener("click", function (evt) {
         var id = JSON.parse(evt.target.getAttribute("data-id"));
         var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = () => {
+            (xhr.readyState === 4 && xhr.status === 200) ? location.reload() : null;
+        }
         xhr.open("PUT", "http://localhost:3000/api/addToCart/");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify({
@@ -101,6 +107,9 @@ function removeFromCart(removeFromCartBtn) {
     removeFromCartBtn.addEventListener("click", function (evt) {
         var id = JSON.parse(evt.target.parentElement.getAttribute("data-id"));
         var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = () => {
+            (xhr.readyState === 4 && xhr.status === 200) ? location.reload() : null;
+        }
         xhr.open("PUT", "http://localhost:3000/api/removeFromCart/");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify({

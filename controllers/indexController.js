@@ -2,28 +2,6 @@ const Product = require('../models/productModel');
 const db = require('../database/mongoose');
 
 exports.init = (req, res) => {
-    renderIndex(req, res);
-}
-
-exports.toggleFavorite = (req, res) => {
-    Product.findOneAndUpdate({ productId: req.body.productId },  { favorite: req.body.favorite }).then((prod) => {
-        renderIndex(req, res);
-    })
-}
-
-exports.addToCart = (req, res) => {
-    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: true }).then((prod) => {
-        renderIndex(req, res);
-    })
-}
-
-exports.removeFromCart = (req, res) => {
-    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: false }).then((prod) => {
-        renderIndex(req, res);
-    })
-}
-
-renderIndex = (req, res) => {
     var list;
     var cart;
     var subtotal = {
@@ -52,4 +30,22 @@ renderIndex = (req, res) => {
             })
         })
     });
+}
+
+exports.toggleFavorite = (req, res) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { favorite: req.body.favorite }).then((prod) => {
+        res.render('index');
+    })
+}
+
+exports.addToCart = (req, res) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: true }).then((prod) => {
+        res.render('index');
+    })
+}
+
+exports.removeFromCart = (req, res) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: false }).then((prod) => {
+        res.render('index');
+    })
 }
