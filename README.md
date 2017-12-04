@@ -46,5 +46,5 @@ Abaixo, a lista do que foi solicitado e do que foi implementado
 * [Gulp](https://gulpjs.com/) - Automatizador de tarefas.
 * [Sass](http://sass-lang.com/) - Pré-processador CSS.
 
-### IDE
+### Editor
 * [VSCode](https://code.visualstudio.com/) - Visual Studio Code
