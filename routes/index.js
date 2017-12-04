@@ -11,4 +11,12 @@ router.put('/api/addToFav', function (req, res, next) {
   indexController.toggleFavorite(req, res);
 });
 
+router.put('/api/addToCart', function (req, res, next) {
+  indexController.addToCart(req, res);
+});
+
+router.put('/api/removeFromCart', function (req, res, next) {
+  indexController.removeFromCart(req, res);
+});
+
 module.exports = router;

@@ -11,6 +11,18 @@ exports.toggleFavorite = (req, res) => {
     })
 }
 
+exports.addToCart = (req, res) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: true }).then((prod) => {
+        renderIndex(req, res);
+    })
+}
+
+exports.removeFromCart = (req, res) => {
+    Product.findOneAndUpdate({ productId: req.body.productId },  { cart: false }).then((prod) => {
+        renderIndex(req, res);
+    })
+}
+
 renderIndex = (req, res) => {
     var list;
     var cart;

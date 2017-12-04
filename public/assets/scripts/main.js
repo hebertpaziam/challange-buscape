@@ -1,19 +1,25 @@
-//VARIAVEIS GLOBAIS
+//============== INICIAR TODAS AS FUNÇÕES DOS PRODUTOS ==============
 var products = document.querySelectorAll(".product-list .product");
-var menuBtn = document.querySelector("#menu .icon");
-var cart = document.querySelector(".navbar .cart");
-var badge = document.querySelector("#menu .badge");
-
-//============== INICIAR TODAS AS FUNÇÕES ==============
 for (var i = 0; i < products.length; i++) {
     var changeViewBtns = products[i].querySelectorAll(".change-view .action");
     var addFavoriteBtn = products[i].querySelector(".info > .name > .add-favorites");
     var addToCartBtn = products[i].querySelector(".info > .add-cart");
 
     changeViewsInit(changeViewBtns);
-    addToFavoritesInit(addFavoriteBtn);
-    // addToCartInit(addToCartBtn);
+    addToFavorites(addFavoriteBtn);
+    addToCart(addToCartBtn);
+}
 
+//============== INICIAR TODAS AS FUNÇÕES DO CARRINHO ==============
+var cart = document.querySelector(".navbar .cart");
+var cartProducts = cart.querySelectorAll(".cart-products .product")
+var badge = document.querySelector("#menu .badge");
+var menuBtn = document.querySelector("#menu .icon");
+
+
+for (var i = 0; i < cartProducts.length; i++) {
+    var removeFromCartBtn = cartProducts[i].querySelector(".remove-btn");
+    removeFromCart(removeFromCartBtn);
 }
 menuBtn.addEventListener("click", function () {
     if (cart.className.indexOf(" -closed") != -1) {
@@ -22,12 +28,10 @@ menuBtn.addEventListener("click", function () {
         cart.className += " -closed";
     }
 });
-calcBadgeCount();
-//=======================================================
 
 //CALCULA A QUANTIDADE DE PRODUTOS NO CARRINHO
 function calcBadgeCount() {
-    var badgeValue = cart.querySelectorAll(".cart-products .product").length;
+    var badgeValue = cartProducts.length;
     if (badgeValue <= 0) {
         badge.style.display = "none";
     } else {
@@ -35,6 +39,10 @@ function calcBadgeCount() {
         badge.innerHTML = badgeValue;
     }
 }
+calcBadgeCount();
+//=======================================================
+
+
 
 //TROCAR IMAGEM PRINCIPAL
 function changeViewsInit(changeViewButtons) {
@@ -59,29 +67,44 @@ function changeViewsInit(changeViewButtons) {
 }
 
 //ADICIONAR PRODUTO AOS FAVORITOS
-function addToFavoritesInit(addFavoriteBtn) {
+function addToFavorites(addFavoriteBtn) {
     addFavoriteBtn.addEventListener("click", function (evt) {
 
-       
-        var isFavorite = (evt.target.className.indexOf("fa fa-heart-o") != -1);
-        
+        var isFavorite = JSON.parse(evt.target.parentElement.getAttribute("data-fav"));
+        var id = JSON.parse(evt.target.parentElement.getAttribute("data-id"));
 
         var xhr = new XMLHttpRequest()
         xhr.open("PUT", "http://localhost:3000/api/addToFav/");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify({
-            productId: 6717132,
-            favorite: isFavorite
+            productId: id,
+            favorite: !isFavorite
         }));
     })
 }
 
 //ADICIONAR PRODUTO AO CARRINHO
-function addToCartInit(addToCartBtn) {
-    var cartProducts = cart.querySelector(".cart-products");
+function addToCart(addToCartBtn) {
     addToCartBtn.addEventListener("click", function (evt) {
-        var productElem = (evt.target.className.indexOf("fa-chevron") == -1) ? productElem = evt.path[2] : evt.path[3];
-        cartProducts.insertAdjacentElement("afterBegin", productElem.cloneNode(true));
-        calcBadgeCount();
+        var id = JSON.parse(evt.target.getAttribute("data-id"));
+        var xhr = new XMLHttpRequest()
+        xhr.open("PUT", "http://localhost:3000/api/addToCart/");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({
+            productId: id
+        }));
+    })
+}
+
+//REMOVER PRODUTO DO CARRINHO
+function removeFromCart(removeFromCartBtn) {
+    removeFromCartBtn.addEventListener("click", function (evt) {
+        var id = JSON.parse(evt.target.parentElement.getAttribute("data-id"));
+        var xhr = new XMLHttpRequest()
+        xhr.open("PUT", "http://localhost:3000/api/removeFromCart/");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({
+            productId: id
+        }));
     })
 }
