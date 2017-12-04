@@ -272,7 +272,7 @@ a, a:active, a:visited, a:hover {
             transform: translate(-50%, 0px);
     text-align: center; }
 
-.better-price-flag {
+.best-price-flag {
   display: block;
   position: relative;
   color: #FFFFFF;
@@ -285,7 +285,7 @@ a, a:active, a:visited, a:hover {
   padding: 0px 10px;
   margin: 0px 10px 20px 0px;
   text-transform: uppercase; }
-  .better-price-flag:after {
+  .best-price-flag:after {
     content: "";
     display: block;
     position: absolute;
