@@ -44,7 +44,7 @@
         {{#each list}}
         <div class="product" data-id="{{id}}">
             <div class="change-view">
-                <button class="action"><img class="another-image" src="{{images}}" alt=""></button>
+                {{#each images}}<button class="action"><img class="another-image" src="{{this}}" alt=""></button>{{/each}}
             </div>
             <figure class="main-view"> <img class="main-image" src="{{images}}" alt=""/></figure>
             <div class="info">
