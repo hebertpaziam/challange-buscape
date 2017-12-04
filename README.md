@@ -13,7 +13,7 @@ $ npm start
 
 Abaixo, a lista do que foi solicitado e do que foi implementado
 #### Pré-requisitos
-| Requisito | Implementado |
+| Requisito | Implementação |
 | ------ | ------ |
 | Layout responsivo. | OK |
 | Listar os produtos. | OK |
@@ -22,7 +22,7 @@ Abaixo, a lista do que foi solicitado e do que foi implementado
 | Galeria de imagens. | OK |
 
 #### Bônus Game
-| Requisito | Implementado |
+| Requisito | Implementação |
 | ------ | ------ |
 | Trocar imagens quebradas para imagens de erro default. | OK |
 | Renderizar no server side. | OK |
