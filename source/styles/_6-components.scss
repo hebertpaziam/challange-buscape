@@ -33,10 +33,11 @@ cards específicos como aqueles incluindo imagens, etc.
     }
     >.cart {
         width: 100%;
+        height: auto;
         transition: all 150ms linear;
         overflow: hidden;
         &.-closed {
-            max-height: 0px;
+            height: 0px;
         }
     }
 }

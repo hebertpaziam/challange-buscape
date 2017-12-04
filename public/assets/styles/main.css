@@ -320,11 +320,12 @@ a, a:active, a:visited, a:hover {
     margin: 10px; }
   .navbar > .cart {
     width: 100%;
+    height: auto;
     -webkit-transition: all 150ms linear;
     transition: all 150ms linear;
     overflow: hidden; }
     .navbar > .cart.-closed {
-      max-height: 0px; }
+      height: 0px; }
 
 .cart-products {
   background-color: #daaf00; }
