@@ -9,17 +9,22 @@
         </div>
         <div class="cart -closed">
             <div class="cart-products">
-                <div class="product" data-id="1233456448">
-                    <figure class="image"><img src="http://mthumbs.buscape.com.br/tv/smart-tv-samsung-serie-4-un32j4300ag-32-polegadas-led-plana_600x600-PU95547_1.jpg" alt=""></figure>
+
+                {{#each cart}}
+                <div class="product" data-id="{{id}}">
+                    <figure class="image"><img src="{{images}}" alt=""></figure>
                     <button class="remove-btn"><span class="fa fa-remove"></span></button>
                     <div class="info">
-                        <div class="name">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana</div>
+                        <div class="name">{{name}}</div>
                         <div class="price">
-                            <div class="block">10x R$ 134,11</div>
-                            <div class="block">R$ 1.139,90 à vista</div>
+                            <div class="block">{{price.installments}}x R$ {{price.installmentValue}}</div>
+                            <div class="block">R$ {{price.value}} à vista</div>
                         </div>  
                     </div>
                 </div>
+                {{/each}}
+
+                
                 <div class="subtotal">
                     <div class="title">subtotal</div>
                     <div class="divider"></div>
@@ -36,25 +41,23 @@
 
 <main>
     <section class="product-list">
-        <h1>{{res}}</h1>
-        <div class="product">
+        {{#each list}}
+        <div class="product" data-id="{{id}}">
             <div class="change-view">
-                <button class="action -active"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt=""></button>
-                <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_2_c.jpg?v=2347575274" alt=""></button>
-                <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_3_c.jpg?v=318433138" alt=""></button>
-                <button class="action"><img class="another-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_4_c.jpg?v=33273730" alt=""></button>
+                <button class="action"><img class="another-image" src="{{images}}" alt=""></button>
             </div>
-            <figure class="main-view"> <img class="main-image" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt=""/></figure>
+            <figure class="main-view"> <img class="main-image" src="{{images}}" alt=""/></figure>
             <div class="info">
-                <div class="name">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana<button class="add-favorites"><span class="fa fa-heart-o"></span></button></div>
+                <div class="name">{{name}}<button class="add-favorites"><span class="fa fa-heart-o"></span></button></div>
                 <div class="divider"></div>
-                <div class="better-price-flag">MELHOR PREÇO</div>
+                {{#if bestPrice}} <div class="better-price-flag">MELHOR PREÇO</div>{{/if}}
                 <div class="price">
-                    <span class="installments">10x</span><span class="currency-symbol">R$</span><span class="installment-value">134,11</span>
-                    <div class="value">ou <strong>R$ 1139,90</strong> à vista.</div>
+                    <span class="installments">{{price.installments}}x</span><span class="currency-symbol">R$</span><span class="installment-value">{{price.installmentValue}}</span>
+                    <div class="value">ou <strong>R$ {{price.value}}</strong> à vista.</div>
                 </div>
                 <button class="add-cart">Adicionar ao carrinho <span class="fa fa-chevron-right"></span></button>
             </div>
         </div>
+        {{/each}}
     </section>
 </main>

@@ -9,9 +9,11 @@ var Product = new Schema({
     price: {
         value:{ type: Number, required: true },
         installments:{ type: Number, required: true },
-        installmentsValue:{ type: Number, required: true }
+        installmentValue:{ type: Number, required: true }
     },
-    favorite:{ type: Boolean, required: true }
+    cart:{ type: Boolean, required: true },
+    favorite:{ type: Boolean, required: true },
+    bestPrice:{ type: Boolean, required: true },
 });
 
 module.exports = mongoose.model('Product', Product);
