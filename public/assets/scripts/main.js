@@ -1,3 +1,33 @@
+//============== INICIAR TODAS AS FUNÇÕES DO CARRINHO ==============
+var cart = document.querySelector(".navbar .cart");
+var cartProducts = cart.querySelectorAll(".cart-products .product")
+for (var i = 0; i < cartProducts.length; i++) {
+    var removeFromCartBtn = cartProducts[i].querySelector(".remove-btn");
+    removeFromCart(removeFromCartBtn);
+}
+
+//ABRE-FECHA O MENU DA NAVBAR
+var menuBtn = document.querySelector("#menu .icon");
+menuBtn.addEventListener("click", function () {
+    if (cart.className.indexOf(" -closed") != -1) {
+        cart.className = cart.className.replace(/ -closed/g, "");
+    } else {
+        cart.className += " -closed";
+    }
+});
+
+//CALCULA A QUANTIDADE DE PRODUTOS NO CARRINHO
+var badge = document.querySelector("#menu .badge");
+var badgeValue = cartProducts.length;
+if (badgeValue <= 0) {
+    badge.style.display = "none";
+} else {
+    badge.style.display = "block";
+    badge.innerHTML = badgeValue;
+}
+//=======================================================
+
+
 //============== INICIAR TODAS AS FUNÇÕES DOS PRODUTOS ==============
 var products = document.querySelectorAll(".product-list .product");
 for (var i = 0; i < products.length; i++) {
@@ -10,40 +40,6 @@ for (var i = 0; i < products.length; i++) {
     addToCart(addToCartBtn);
 }
 
-//============== INICIAR TODAS AS FUNÇÕES DO CARRINHO ==============
-var cart = document.querySelector(".navbar .cart");
-var cartProducts = cart.querySelectorAll(".cart-products .product")
-var badge = document.querySelector("#menu .badge");
-var menuBtn = document.querySelector("#menu .icon");
-
-
-for (var i = 0; i < cartProducts.length; i++) {
-    var removeFromCartBtn = cartProducts[i].querySelector(".remove-btn");
-    removeFromCart(removeFromCartBtn);
-}
-menuBtn.addEventListener("click", function () {
-    if (cart.className.indexOf(" -closed") != -1) {
-        cart.className = cart.className.replace(/ -closed/g, "");
-    } else {
-        cart.className += " -closed";
-    }
-});
-
-//CALCULA A QUANTIDADE DE PRODUTOS NO CARRINHO
-function calcBadgeCount() {
-    var badgeValue = cartProducts.length;
-    if (badgeValue <= 0) {
-        badge.style.display = "none";
-    } else {
-        badge.style.display = "block";
-        badge.innerHTML = badgeValue;
-    }
-}
-calcBadgeCount();
-//=======================================================
-
-
-
 //TROCAR IMAGEM PRINCIPAL
 function changeViewsInit(changeViewButtons) {
 
@@ -52,7 +48,6 @@ function changeViewsInit(changeViewButtons) {
         changeViewButtons[i].addEventListener("click", function (evt) {
             var buttonElem = evt.path[1];
             var mainImage = evt.path[3].querySelector(".main-view .main-image");
-
 
             for (var key in changeViewButtons) {
                 if (changeViewButtons.hasOwnProperty(key)) {
