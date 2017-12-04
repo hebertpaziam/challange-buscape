@@ -2,12 +2,11 @@ const Product = require('../models/productModel');
 const db = require('../database/mongoose');
 
 exports.init = (req, res) => {
-
     renderIndex(req, res);
 }
 
-exports.addToFav = (req, res) => {
-    Product.findOneAndUpdate({productId: req.body.productId},  {favorite:true})
+exports.toggleFavorite = (req, res) => {
+    Product.findOneAndUpdate({productId: req.body.productId},  {favorite: req.body.favorite})
     .then((prod) => {
         renderIndex(req, res);
     })

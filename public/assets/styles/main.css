@@ -448,7 +448,7 @@ a, a:active, a:visited, a:hover {
 .info {
   display: inline-block;
   vertical-align: top;
-  max-width: 400px;
+  max-width: 420px;
   font-weight: bold; }
   .info > .name {
     font-size: 25px;

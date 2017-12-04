@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.put('/api/addToFav', function (req, res, next) {
-  indexController.addToFav(req, res);
+  indexController.toggleFavorite(req, res);
 });
 
 module.exports = router;

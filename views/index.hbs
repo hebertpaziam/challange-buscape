@@ -17,8 +17,8 @@
                     <div class="info">
                         <div class="name">{{name}}</div>
                         <div class="price">
-                            <div class="block">{{price.installments}}x R$ {{price.installmentValue}}</div>
-                            <div class="block">R$ {{price.value}} à vista</div>
+                            <div class="block">{{price.installments}}x R$ {{{currency price.installmentValue}}}</div>
+                            <div class="block">R$ {{{currency price.value}}} à vista</div>
                         </div>  
                     </div>
                 </div>
@@ -29,8 +29,8 @@
                     <div class="title">subtotal</div>
                     <div class="divider"></div>
                     <div class="price">
-                        <div class="block">10x R$ {{subtotal.installmentValue}}</div>
-                        <div class="block">ou R$ {{subtotal.value}} à vista</div>
+                        <div class="block">10x R$ {{{currency subtotal.installmentValue}}}</div>
+                        <div class="block">ou R$ {{{currency subtotal.value}}} à vista</div>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
 <main>
     <section class="product-list">
         {{#each list}}
-        <div class="product" data-id="{{id}}">
+        <div class="product" data-id="{{productId}}">
             <div class="change-view">
                 {{#each images}}<button class="action"><img class="another-image" src="{{this}}" alt=""></button>{{/each}}
             </div>
@@ -59,8 +59,8 @@
                 <div class="divider"></div>
                 {{#if bestPrice}} <div class="better-price-flag">MELHOR PREÇO</div>{{/if}}
                 <div class="price">
-                    <span class="installments">{{price.installments}}x</span><span class="currency-symbol">R$</span><span class="installment-value">{{price.installmentValue}}</span>
-                    <div class="value">ou <strong>R$ {{price.value}}</strong> à vista.</div>
+                    <span class="installments">{{price.installments}}x</span><span class="currency-symbol">R$</span><span class="installment-value">{{{currency price.installmentValue}}}</span>
+                    <div class="value">ou <strong>R$ {{{currency price.value}}}</strong> à vista.</div>
                 </div>
                 <button class="add-cart">Adicionar ao carrinho <span class="fa fa-chevron-right"></span></button>
             </div>
