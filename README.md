@@ -9,11 +9,26 @@ $ npm install
 $ npm start
 ```
 
-### Funcionalidades
-  - Pode-se adicionar itens ao carrinho.
-  - Pode-se remover itens do carrinho.
-  - Pode-se adicionar itens aos favoritos.
-  - Pode-se visualizar varias as imagens de um mesmo produto através da galeria de imagens.
+### Solciitação / Implementação
+
+Abaixo, a lista do que foi solicitado e do que foi implementado
+#### Pré-requisitos
+| Requisito | Implementado |
+| ------ | ------ |
+| Layout responsivo. | OK |
+| Listar os produtos. | OK |
+| Adicionar no carrinho. | OK |
+| Remover do carrinho. | OK |
+| Galeria de imagens. | OK |
+
+#### Bônus Game
+| Requisito | Implementado |
+| ------ | ------ |
+| Trocar imagens quebradas para imagens de erro default. | OK |
+| Renderizar no server side. | OK |
+| Persistir os dados. | OK |
+| Teste do código. | X |
+
 
 ## Tecnologias Utilizadas
 ### Back-End
